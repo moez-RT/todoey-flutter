@@ -49,6 +49,8 @@ class _TasksScreenState extends State<TasksScreen> {
           return Scaffold(
             backgroundColor: Colors.lightBlueAccent,
             bottomNavigationBar: ConvexAppBar(
+              backgroundColor: Colors.lightBlueAccent,
+              activeColor: Colors.white,
               items: [
                 TabItem(icon: Icons.highlight_remove_rounded, title: 'To Do'),
                 TabItem(icon: Icons.add_circle_outline_rounded, title: 'Add'),
