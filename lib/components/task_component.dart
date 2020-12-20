@@ -35,11 +35,17 @@ class TaskComponent extends StatelessWidget {
               fontWeight: task.isDone ? null : FontWeight.bold,
               decorationThickness: 1.5),
         ),
+        subtitle: task.date != null? Text(
+          task.date,
+          style: TextStyle(
+              color: task.isDone ? Colors.white : Colors.grey[700],
+              fontWeight: task.isDone ? null : FontWeight.bold,),
+        ) : null,
         value: task.isDone,
         activeColor: Colors.lightBlueAccent,
         onChanged: (newValue) {
             task.toggleDone();
-            Provider.of<DataTask>(context, listen: false).modifiedTask();
+            Provider.of<DataTask>(context, listen: false).modifiedTask(task);
         },
         contentPadding: EdgeInsets.zero,
       ),
